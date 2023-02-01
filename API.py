@@ -34,7 +34,7 @@ clasifier_model = load_model()
 app = FastAPI(
     title="Predicting the Titanic Survivors API",
     version="0.1.0",
-    description="Prediction of the survivors of the famous Titanic Disaster",
+    description="Predicting the survivors of the infamous Titanic Disaster",
 )
 
 
@@ -92,12 +92,15 @@ def make_prediction(
 
 
 ## Endpoints
+@app.post("/")
+def index():
+    return {
+        "message": 'welcome to the API for the model predicting the survivors of the infamous Titanic Disaster',
+    
+    }
 @app.post("/predict")
 async def predict(input: Model_Input):
-    """__descr__
-
-    --details---
-    """
+    
     output_pred = make_prediction(
         Pclass = input.Pclass,
         Age = input.Age,
@@ -109,7 +112,6 @@ async def predict(input: Model_Input):
         Embarked_C = input.Embarked_C,
         Embarked_Q=input.Embarked_Q,
         Embarked_S=input.Embarked_S,
-
 
     )
     if (output_pred[0]>0):
