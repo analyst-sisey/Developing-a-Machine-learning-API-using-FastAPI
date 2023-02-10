@@ -120,7 +120,7 @@ async def predict(input: Model_Input):
         output_pred ="This passenger SURVIVED the Titanic shipwreck."
     return {
         "prediction": output_pred,
-        "input": input,
+       # "input": input,
     }
 
 
