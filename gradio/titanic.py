@@ -5,7 +5,7 @@ import pickle, os
 import pandas as pd
 import base64
 import requests
-
+import time
 
 DIRPATH = os.path.dirname(__file__)
 ASSETSDIRPATH = os.path.join(DIRPATH, "assets")
@@ -112,16 +112,18 @@ with form:
 }
 
 if submitted:
-    st.success("Processing!")
     
+    with st.spinner('Processing! Wait for it...'):
+        time.sleep(5)
+
 
 
     #res = requests.post(url= "http://127.0.0.1:8000/predict", data = data)
     res = requests.post(url = "http://127.0.0.1:8000/predict", data = json.dumps(inputs))
-    st.subheader(f"Response from API is= {res.text}")
    
     x =res.text
     y = json.loads(x)
-    st.subheader(f"Response from API = {y['prediction']}")
-    
+    st.subheader(f"The model predicts that {y['Interpretation']} with a probability of {y['Probability Score']} ")
+    st.subheader(f"Response from API {res.text}")
     st.balloons()
+    st.success("Processing Done!",icon="✅")

@@ -87,9 +87,11 @@ def make_prediction(
     X = feature_engeneering(dataset=df, scaler=scaler,)
 
     model_output = clasifier_model.predict(X).tolist()
-
-    return model_output
-
+    #Logistic regression is a binary classifier. Hence, predict_proba(X_test) returns 2 columns for the negative and positive class. 
+    # We use the loc to return only the positive probability.
+    model_prob = clasifier_model.predict_proba(X)[:,1].tolist()
+   # return model_output
+    return model_output, model_prob
 
 ## Endpoints
 @app.post("/")
@@ -101,7 +103,7 @@ def index():
 @app.post("/predict")
 async def predict(input: Model_Input):
     
-    output_pred = make_prediction(
+    output_pred,model_prob = make_prediction(
         Pclass = input.Pclass,
         Age = input.Age,
         SibSp = input.SibSp,
@@ -115,12 +117,14 @@ async def predict(input: Model_Input):
 
     )
     if (output_pred[0]>0):
-        output_pred ="This passenger DID NOT survive the Titanic shipwreck."
+        interprete ="This passenger DID NOT survive the Titanic shipwreck"
     else:
-        output_pred ="This passenger SURVIVED the Titanic shipwreck."
+        interprete ="This passenger SURVIVED the Titanic shipwreck" 
     return {
         "prediction": output_pred,
-       # "input": input,
+        "Interpretation": interprete,
+        "Probability Score": model_prob,
+        "input": input,
     }
 
 
