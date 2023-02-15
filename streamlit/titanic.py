@@ -7,9 +7,9 @@ import base64
 import requests
 import time
 
-DIRPATH = os.path.dirname(__file__)
-ASSETSDIRPATH = os.path.join(DIRPATH, "assets")
-ml_components_pkl = os.path.join(ASSETSDIRPATH, "logistic_reg.pkl")
+#DIRPATH = os.path.dirname(__file__)
+#ASSETSDIRPATH = os.path.join(DIRPATH, "assets")
+#ml_components_pkl = os.path.join(ASSETSDIRPATH, "logistic_reg.pkl")
 
 # load the model
 @st.cache(persist=True,allow_output_mutation=True)
