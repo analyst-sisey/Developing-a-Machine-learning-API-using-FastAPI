@@ -1,5 +1,5 @@
 # Introduction
-This repository contains a comprehensive projecct that first analysed and visualised the titanic dataset, 2 predictive machine learning models were then created using the dataset. The model was then deployed using FastAPI. The project was the containerized using docker.
+This repository contains a comprehensive projecct that first analysed and visualised the titanic dataset, 2 predictive machine learning models were then created using the dataset. The model was then deployed using FastAPI. The project was the containerized using docker. Below is the details of each task.
 
 # Data Analysis and Model Creation
 The goal of this project is to use the analyse the dataset and create a predictive model that can accurately determine whether a given passenger survived or died in the sinking of the ship. We wexplore the processes of accomplishing this goal using the following CRISP-DM methodology. 
@@ -11,10 +11,28 @@ The goal of this project is to use the analyse the dataset and create a predicti
 
 **The project notebook titanic_survival_prediction.ipynb in this repository contains detailed explanations and code for this project**
 
+[The article for this project can be found here](https://medium.com/@alihu.alhassan/from-data-to-prediction-a-comprehensive-guide-to-analyzing-visualizing-and-modeling-the-titanic-3ca458d4da83)
+
 
 # Developing-a-Machine-learning-API-using-FastAPI
 This project creates an API that is requested to interact with a the model. The model is an ML model that predicts the survivors of the famous titanic disaster.
 This is an interesting solution when you want to keep your model architecture secret or to make your model available to users already having an API. By creating an API, and deploying it, your model can easily receive request using the internet protocol.
 
+**The code for this project is in the API.py file in this repository**
+
+[The article for this project can be found here](https://medium.com/@alihu.alhassan/fast-and-easy-deployment-of-fastapi-apps-with-docker-containers-916d303cedf2)
+
 # Containerizing the Model using Docker
 Finally we wrap our project in a container using Docker. Containerizing a model provides a lightweight, portable, and reproducible environment for running the model, regardless of the underlying system. This allows us to easily package the model and its dependencies into a single container that can be deployed and run consistently across different machines, making it easier to share and scale the model. Additionally, containerization can help isolate the model from other processes running on the host system, improving security and reducing potential conflicts with other software installed on the same machine.
+
+**The Code for this project is in the DockerFile in this repository**
+
+[The article for this project can be found here](https://medium.com/@alihu.alhassan/fast-and-easy-deployment-of-fastapi-apps-with-docker-containers-916d303cedf2)
+
+
+# Creating a streamlit app to interact with the fastapi app
+This project creates a simple UI for users to interact with the model using streamlit. The projects integrating Streamlit & FastAPI.
+
+**The Code for this project is in the streamlit/titanic.py file  in this repository**
+
+
