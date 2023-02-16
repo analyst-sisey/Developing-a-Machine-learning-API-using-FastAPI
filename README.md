@@ -1,5 +1,5 @@
 # Introduction
-This repository contains a comprehensive projecct that first analysed and visualised the titanic dataset, 2 predictive machine learning models were then created using the dataset. The model was then deployed using FastAPI. The project was the containerized using docker. Below is the details of each task.
+This repository contains a comprehensive projecct that first analysed and visualised the titanic dataset, 2 predictive machine learning models were then created using the dataset. The model was then deployed using FastAPI. The project was the containerized using docker. Astreamlit app was also created for users ti interact with the API. Below is the details of each task.
 
 # Data Analysis and Model Creation
 The goal of this project is to use the analyse the dataset and create a predictive model that can accurately determine whether a given passenger survived or died in the sinking of the ship. We wexplore the processes of accomplishing this goal using the following CRISP-DM methodology. 
