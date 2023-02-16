@@ -33,7 +33,7 @@ Open your web browser and go to http://localhost:80/docs to view the API documen
 # Containerizing the Model using Docker
 Finally we wrap our project in a container using Docker. Containerizing a model provides a lightweight, portable, and reproducible environment for running the model, regardless of the underlying system. This allows us to easily package the model and its dependencies into a single container that can be deployed and run consistently across different machines, making it easier to share and scale the model. Additionally, containerization can help isolate the model from other processes running on the host system, improving security and reducing potential conflicts with other software installed on the same machine.
 
-#RUN
+# RUN
 
 Start the app by running the following command:
 
